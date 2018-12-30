@@ -2,17 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.tmp</groupId>
-    <artifactId>fe</artifactId>
+    <groupId>com.visu</groupId>
+    <artifactId>app-ui</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <properties>
+        <frontend-plugin.version>1.5</frontend-plugin.version>
+        <resource-plugin.version>3.0.1</resource-plugin.version>
+    </properties>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
-                <version>1.5</version>
+                <version>${frontend-plugin.version}</version>
                 <configuration>
                     <workingDirectory>src/main/frontend</workingDirectory>
                 </configuration>
@@ -54,7 +59,7 @@
 
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>${resource-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>position-react-build</id>
